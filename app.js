@@ -1,25 +1,6 @@
 //event handler
 $(document).ready(function () {
 
-
-
-    // $("#submitButton").click(function () {
-    // $("#submitButton").prop('enabled', true);
-    // let fName = $('#firstName').val();
-    // alert(fName);
-
-    // });
-
-
-
-    $("<div><h2>Hello</h2></div>").appendTo("body")
-
-    $('<div></div>').appendTo('body');
-    $('<h2></h2>').appendTo('div');
-    $('sdkljflsdjkf').appendTo('h2');
-
-    //$('<ul></ul>').appendTo('div');
-
     $(function () {
 
         //disable the submit button
@@ -29,30 +10,61 @@ $(document).ready(function () {
         $('#txtInput').keyup(function () {
             if ($(this).val() != '') {
 
+                //disable button so user cannot click
                 $('#btnInput').prop('disabled', false);
 
+                //function to grab value from html form.
                 $('#btnInput').click(function () {
 
-                    let word = $('#txtInput').val();
-                    alert(word);
+                    //assign value to a variable.
+                    let $txt = $('#txtInput').val();
 
-                 
+                    //display value in alert message
+                    //alert($txt);
 
-                   
+                    //testing different way to display value with other string.
+                    //alert("Entered: " + $("#txtInput").val());
+
+                    //appending value to h2 tag and h2 tag in a div tag and then to body.
+                    //$('<div><h2>' + $('#txtInput').val()+ '</h2></div>').appendTo("body");
+
+                    //using variable and appending value to h2 tag and h2 tag in a div tag and then to body.
+                    //$('<div><h2>' + $txt + '</h2></div>').appendTo('body');
+
+                    //testing moveover function with div tags
+                    // $('div').mouseover(function () {
+                    // $('div').css('background-color', 'yellow');
+                    //  });
+                    // $('div').mouseout(function () {
+                    // $('div').css('background-color', 'lightgray');
+                    // });
+
+
+                    //using moveover function, to apply background color and border radius to div.
+                    //$('div').mouseover(function () {
+                        //var styles = {
+                           // backgroundColor: 'lightgray',
+                           // border: '1px solid black',
+                      //  };
+
+                       // $(this).css(styles);
+                    //});
+
+
+
+
 
 
                 });
 
-
             }
-
-
-
 
         });
 
 
-        $("<div><h2>Hello</h2></div>").appendTo("body")
+
+
+
 
 
     })
