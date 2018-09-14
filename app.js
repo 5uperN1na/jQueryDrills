@@ -6,6 +6,8 @@ $(document).ready(function () {
         //disable the submit button
         $('#btnInput').prop('disabled', true);
 
+        $('<div><ul></ul></div>').appendTo('body');
+
         //check to see if input text value is not blank, enable button when text value entered then display value in alert.
         $('#txtInput').keyup(function () {
             if ($(this).val() != '') {
@@ -61,7 +63,7 @@ $(document).ready(function () {
                     // $('ul').append('<li>' + $('#txtInput').val() + '</li>');
 
                   
-                    $('<div><ul></ul></div>').appendTo('body');
+                
 
                   
                     $('ul').append('<li>' + $txt + '</li>');
@@ -77,12 +79,6 @@ $(document).ready(function () {
 
         
         });
-
-
-
-
-
-
 
 
     })
