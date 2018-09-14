@@ -42,24 +42,42 @@ $(document).ready(function () {
 
                     //using moveover function, to apply background color and border radius to div.
                     //$('div').mouseover(function () {
-                        //var styles = {
-                           // backgroundColor: 'lightgray',
-                           // border: '1px solid black',
-                      //  };
+                    //var styles = {
+                    // backgroundColor: 'lightgray',
+                    // border: '1px solid black',
+                    //  };
 
-                       // $(this).css(styles);
+                    // $(this).css(styles);
                     //});
 
 
+                    //Testing: create a div and append to the body.
+                    //$('<div></div>').appendTo('body');
 
+                    //Testing: create an unordered list and append to the div
+                   // $('<ul></ul>').appendTo('div');
 
+                    //Testing:  taking input in the list item and appending to the unordered list.
+                    // $('ul').append('<li>' + $('#txtInput').val() + '</li>');
+
+                  
+                    $('<div><ul></ul></div>').appendTo('body');
+
+                  
+                    $('ul').append('<li>' + $txt + '</li>');
 
 
                 });
 
+         
+
+
+              
             }
 
+        
         });
+
 
 
 
