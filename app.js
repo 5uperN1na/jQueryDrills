@@ -1,12 +1,11 @@
 //event handler
 $(document).ready(function () {
+    $('<div><ul></ul></div>').appendTo('body');
 
     $(function () {
 
         //disable the submit button
         $('#btnInput').prop('disabled', true);
-
-        $('<div><ul></ul></div>').appendTo('body');
 
         //check to see if input text value is not blank, enable button when text value entered then display value in alert.
         $('#txtInput').keyup(function () {
@@ -41,7 +40,6 @@ $(document).ready(function () {
                     // $('div').css('background-color', 'lightgray');
                     // });
 
-
                     //using moveover function, to apply background color and border radius to div.
                     //$('div').mouseover(function () {
                     //var styles = {
@@ -57,28 +55,32 @@ $(document).ready(function () {
                     //$('<div></div>').appendTo('body');
 
                     //Testing: create an unordered list and append to the div
-                   // $('<ul></ul>').appendTo('div');
+                    // $('<ul></ul>').appendTo('div');
 
                     //Testing:  taking input in the list item and appending to the unordered list.
                     // $('ul').append('<li>' + $('#txtInput').val() + '</li>');
 
-                  
-                
 
-                  
+                    //append value in a li to the ul.
                     $('ul').append('<li>' + $txt + '</li>');
 
 
                 });
 
-         
-
-
-              
             }
 
-        
         });
+
+        $('li').click(function () {
+            //console.log(event);
+            $(event.target).css({ 'color': getRandomColor()});
+        });
+
+
+        function getRandomColor() {
+            let randColor = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+            return randColor;
+        }
 
 
     })
