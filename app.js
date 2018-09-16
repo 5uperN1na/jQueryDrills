@@ -64,36 +64,28 @@ $(document).ready(function () {
                     //append value in a li to the ul.
                     $('ul').append('<li>' + $txt + '</li>');
 
-
                 });
-
             }
 
         });
 
-        $('li').click(function () {
-            //console.log(event);
-            $(event.target).css({ 'color': getRandomColor()});
+        //click handler and call randomonColor function to randomly change color on UL/LI element.
+        $('ul').click(function () {
+            $('ul').css({ 'color': randomColor() });
         });
 
-
-        function getRandomColor() {
-            let randColor = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
-            return randColor;
+        //created function to randomly generate color.
+        function randomColor() {
+            let color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+            return color;
         }
 
+        //double click handler to remove li.
+        $('ul').dblclick(function (e) {
+            $(this).remove();
+        });
 
     })
-
-
-
-
-
-
-
-
-
-
 
 
 });
