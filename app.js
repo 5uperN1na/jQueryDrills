@@ -1,17 +1,17 @@
 //event handler
 $(document).ready(function () {
-    $('<div><ul></ul></div>').appendTo('body');
+    $('<div><ul id="mylist"></ul></div>').appendTo('body');
 
     $(function () {
 
         //disable the submit button
         $('#btnInput').prop('disabled', true);
 
-        //check to see if input text value is not blank, enable button when text value entered then display value in alert.
+        //check to see if input text value is not blank.
         $('#txtInput').keyup(function () {
             if ($(this).val() != '') {
 
-                //disable button so user cannot click
+                //enable button so user can click
                 $('#btnInput').prop('disabled', false);
 
                 //function to grab value from html form.
@@ -62,7 +62,7 @@ $(document).ready(function () {
 
 
                     //append value in a li to the ul.
-                    $('ul').append('<li>' + $txt + '</li>');
+                    $('#mylist').append('<li>' + $txt + '</li>');
 
                 });
             }
@@ -70,18 +70,24 @@ $(document).ready(function () {
         });
 
         //click handler and call randomonColor function to randomly change color on UL/LI element.
-        $('ul').click(function () {
-            $('ul').css({ 'color': randomColor() });
+        $('#mylist').on('click', 'li', function () {
+            $(this).css({ 'color': randomColor() });
         });
 
         //created function to randomly generate color.
         function randomColor() {
-            let color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+            //TESTING: let color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+            //return color;
+
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+            let color = `rgb(${r},${g},${b})`;
             return color;
         }
 
         //double click handler to remove li.
-        $('ul').dblclick(function (e) {
+        $('#mylist').on('dblclick', 'li', function () {
             $(this).remove();
         });
 
